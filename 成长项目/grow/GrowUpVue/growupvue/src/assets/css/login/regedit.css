@@ -1,0 +1,107 @@
+#body6 {
+	background-image: url(../../img/5.jpg);
+	background-size: 50%;
+	height: 900px;
+}
+
+#user1 {
+	height: 45px;
+	width: 200px;
+	background-color: sienna;
+	border-radius: 50px 50px 50px 50px;
+}
+
+#pwd1 {
+	height: 45px;
+	width: 200px;
+	background-color: #00FF7F;
+	border-radius: 50px 50px 50px 50px;
+}
+
+#pwd2 {
+	height: 45px;
+	width: 200px;
+	background-color: #008000;
+	border-radius: 50px 50px 50px 50px;
+}
+
+#age1 {
+	height: 45px;
+	width: 200px;
+	background-color: crimson;
+	border-radius: 50px 50px 50px 50px;
+}
+
+#phone1 {
+	height: 45px;
+	width: 200px;
+	background-color: magenta;
+	border-radius: 50px 50px 50px 50px;
+}
+
+#login1 {
+	font: bold 20px 微软雅黑;
+	height: 50px;
+	width: 80px;
+}
+
+#reset2 {
+	font: bold 20px 微软雅黑;
+	height: 50px;
+	width: 80px;
+}
+
+#user2 {
+	font: bold 50px 微软雅黑;
+	margin-left: 100px;
+}
+
+#pwd3 {
+	font: bold 20px 微软雅黑;
+	margin-left: 200px;
+}
+
+#pwd4 {
+	font: bold 20px 微软雅黑;
+	margin-left: 300px;
+}
+
+#n,
+#v,
+#b {
+	font: bold 20px 微软雅黑;
+	color: yellow;
+}
+
+#sex1 {
+	font: bold 20px 微软雅黑;
+	margin-left: 200px;
+}
+
+#date {
+	font: bold 20px 微软雅黑;
+	margin-left: 400px;
+}
+
+#age2 {
+	font: bold 20px 微软雅黑;
+	margin-left: 500px;
+}
+
+#phone2 {
+	font: bold 20px 微软雅黑;
+	margin-left: 600px;
+}
+
+.btns1 {
+	margin-left: 700px;
+}
+
+#reset2 {
+	margin-left: 80px;
+}
+#date1{
+	height: 45px;
+	background-color: slateblue;
+	border-radius: 50px 50px 50px 50px;
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shy.mapper.UtMapper">
+  <resultMap id="BaseResultMap" type="com.shy.model.Ut">
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="tid" jdbcType="INTEGER" property="tid" />
+  </resultMap>
+
+  <insert id="insert" parameterType="com.shy.model.Ut">
+    insert into ut (uid, tid)
+    values (#{uid,jdbcType=INTEGER}, #{tid,jdbcType=INTEGER})
+  </insert>
+
+  <delete id="delete" parameterType="java.lang.Integer">
+    delete from ut
+    where tid = #{tid,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insertSelective" parameterType="com.shy.model.Ut">
+    insert into ut
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="tid != null">
+        tid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="tid != null">
+        #{tid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

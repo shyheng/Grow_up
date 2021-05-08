@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shy.mapper.WorkMapper">
+  <resultMap id="BaseResultMap" type="com.shy.model.Work">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="work_time" jdbcType="VARCHAR" property="workTime" />
+    <result column="work_task" jdbcType="VARCHAR" property="workTask" />
+    <result column="work_name" jdbcType="VARCHAR" property="workName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, work_time, work_task, work_name
+  </sql>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select  work.id, work_time, work_task,work_name
+    from users inner join uw
+                          on users.id = uw.uid
+               inner join work
+                          on uw.wid = work.id
+    where users.username=#{username,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectTime" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" />
+    from work where work_time = #{workTime,jdbcType=VARCHAR}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from work
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insert" parameterType="com.shy.model.Work">
+    insert into work (work_time, work_task,
+      work_name)
+    values (#{workTime,jdbcType=VARCHAR}, #{workTask,jdbcType=VARCHAR},
+      #{workName,jdbcType=VARCHAR})
+  </insert>
+
+  <insert id="insertSelective" parameterType="com.shy.model.Work">
+    insert into work
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="workTime != null">
+        work_time,
+      </if>
+      <if test="workTask != null">
+        work_task,
+      </if>
+      <if test="workName != null">
+        work_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="workTime != null">
+        #{workTime,jdbcType=VARCHAR},
+      </if>
+      <if test="workTask != null">
+        #{workTask,jdbcType=VARCHAR},
+      </if>
+      <if test="workName != null">
+        #{workName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.shy.model.Work">
+    update work
+    <set>
+      <if test="workTime != null">
+        work_time = #{workTime,jdbcType=VARCHAR},
+      </if>
+      <if test="workTask != null">
+        work_task = #{workTask,jdbcType=VARCHAR},
+      </if>
+      <if test="workName != null">
+        work_name = #{workName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <update id="updateByPrimaryKey" parameterType="com.shy.model.Work">
+    update work
+    set work_time = #{workTime,jdbcType=VARCHAR},
+      work_task = #{workTask,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

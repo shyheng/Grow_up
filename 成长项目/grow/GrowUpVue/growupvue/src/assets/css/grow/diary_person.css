@@ -1,0 +1,47 @@
+#b2{
+	color: skyblue;
+	font: bold 20px 宋体;
+	height: 50px;
+	width: 200px;
+}
+#submit17,#submit18,#submit19{
+	height: 50px;
+	font: bold 20px 楷体;
+}
+
+#b3,#b5,#b7,#b9,#b11,#b13,#b15,#b17,#b19{
+	margin-left: 50px;
+}
+
+#b4,#b6,#b8,#b10,#b12,#b14,#b16,#b18{
+	color: indigo;
+	font: bold 20px 楷体;
+	height: 45px;
+	width: 200px;
+}
+
+#submit20,#submit21{
+	margin-left: 100px;
+	background-color: turquoise;
+	color: #F0F8FF;
+	font: bold 20px 楷体;
+	height: 50px;
+	width: 100px;
+}
+
+#submit22{
+	margin-left: 100px;
+	background-color: crimson;
+	color: #F0F8FF;
+	font: bold 20px 楷体;
+	height: 50px;
+	width: 200px;
+}
+#submit23{
+	margin-left: 20px;
+	background-color: sienna;
+	color: #F0F8FF;
+	font: bold 20px 楷体;
+	height: 50px;
+	width: 100px;
+}

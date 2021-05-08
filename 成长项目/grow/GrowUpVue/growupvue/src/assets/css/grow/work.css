@@ -1,0 +1,152 @@
+#user3 {
+	color: slateblue;
+	font: bold 20px 宋体;
+	height: 50px;
+	width: 200px;
+}
+
+#user4 {
+	color: #8B4513;
+	font: bold 20px 宋体;
+	height: 50px;
+	width: 200px;
+}
+
+#submit2,
+#submit3,
+#submit4,
+#submit5 {
+	height: 50px;
+	font: bold 20px 楷体;
+}
+
+#submit2 {
+	color: slateblue;
+}
+
+#submit3 {
+	color: #8B4513;
+}
+
+#submit4 {
+	color: burlywood;
+}
+
+#submit5 {
+	color: darkblue;
+}
+
+#table1 {
+	color: hotpink;
+	font: bold 25px 宋体;
+}
+
+#name2 {
+	margin-left: 50px;
+}
+
+#name3 {
+	color: #4169E1;
+	font: bold 20px 楷体;
+	height: 45px;
+	width: 200px;
+}
+
+#name4 {
+	margin-left: 50px;
+}
+
+#name5 {
+	color: #4169E1;
+	font: bold 20px 楷体;
+	height: 45px;
+	width: 200px;
+}
+
+#name6 {
+	margin-left: 50px;
+}
+
+#name7 {
+	color: #4169E1;
+	font: bold 20px 楷体;
+	height: 45px;
+	width: 200px;
+}
+
+#name8 {
+	margin-left: 50px;
+}
+
+#name9 {
+	color: #4169E1;
+	font: bold 20px 楷体;
+	height: 45px;
+	width: 200px;
+}
+
+#name10 {
+	margin-left: 50px;
+}
+
+#name11 {
+	color: #4169E1;
+	font: bold 20px 楷体;
+	height: 45px;
+	width: 200px;
+}
+
+#name12 {
+	margin-left: 50px;
+}
+
+#name13 {
+	color: #4169E1;
+	font: bold 20px 楷体;
+	height: 45px;
+	width: 200px;
+}
+
+#submit6 {
+	background-color: royalblue;
+	color: #F0F8FF;
+	font: bold 20px 楷体;
+	height: 50px;
+	width: 100px;
+}
+
+#submit7 {
+	margin-left: 100px;
+	background-color: royalblue;
+	color: #F0F8FF;
+	font: bold 20px 楷体;
+	height: 50px;
+	width: 100px;
+}
+
+#submit8 {
+	background-color: crimson;
+	color: #F0F8FF;
+	font: bold 20px 楷体;
+	height: 50px;
+	width: 200px;
+}
+
+#submit9 {
+	margin-left: 100px;
+	background-color: salmon;
+	color: #F0F8FF;
+	font: bold 20px 楷体;
+	height: 50px;
+	width: 100px;
+}
+
+#drawer1 {
+	color: #00CED1;
+	font: bold 30px 宋体;
+}
+
+#work1{
+	margin-right: 500px;
+	margin-top: 40px;
+}

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shy.mapper.PersonalDiaryMapper">
+  <resultMap id="BaseResultMap" type="com.shy.model.PersonalDiary">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="diary_mood" jdbcType="VARCHAR" property="diaryMood" />
+    <result column="diary_date" jdbcType="VARCHAR" property="diaryDate" />
+    <result column="diary_name" jdbcType="VARCHAR" property="diaryName" />
+    <result column="diary_text" jdbcType="VARCHAR" property="diaryText" />
+  </resultMap>
+
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.shy.model.PersonalDiary">
+    <result column="diary_file" jdbcType="LONGVARCHAR" property="diaryFile" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    id, diary_mood, diary_date, diary_name, diary_text
+  </sql>
+  <sql id="Blob_Column_List">
+    diary_file
+  </sql>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select personal_diary.id,diary_mood, diary_date, diary_name, diary_text,diary_file
+    from users inner join ud
+                          on users.id = ud.uid
+               inner join personal_diary
+                          on ud.did = personal_diary.id
+    where users.username=#{username,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectTime" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select *
+    from personal_diary
+    where diary_date=#{diaryDate,jdbcType=VARCHAR}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from personal_diary
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insert" parameterType="com.shy.model.PersonalDiary">
+    insert into personal_diary (diary_mood, diary_date,
+      diary_name, diary_text, diary_file
+      )
+    values (#{diaryMood,jdbcType=VARCHAR}, #{diaryDate,jdbcType=VARCHAR},
+      #{diaryName,jdbcType=VARCHAR}, #{diaryText,jdbcType=VARCHAR}, #{diaryFile,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+
+  <insert id="insertSelective" parameterType="com.shy.model.PersonalDiary">
+    insert into personal_diary
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="diaryMood != null">
+        diary_mood,
+      </if>
+      <if test="diaryDate != null">
+        diary_date,
+      </if>
+      <if test="diaryName != null">
+        diary_name,
+      </if>
+      <if test="diaryText != null">
+        diary_text,
+      </if>
+      <if test="diaryFile != null">
+        diary_file,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="diaryMood != null">
+        #{diaryMood,jdbcType=VARCHAR},
+      </if>
+      <if test="diaryDate != null">
+        #{diaryDate,jdbcType=VARCHAR},
+      </if>
+      <if test="diaryName != null">
+        #{diaryName,jdbcType=VARCHAR},
+      </if>
+      <if test="diaryText != null">
+        #{diaryText,jdbcType=VARCHAR},
+      </if>
+      <if test="diaryFile != null">
+        #{diaryFile,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shy.model.PersonalDiary">
+    update personal_diary
+    <set>
+      <if test="diaryMood != null">
+        diary_mood = #{diaryMood,jdbcType=VARCHAR},
+      </if>
+      <if test="diaryDate != null">
+        diary_date = #{diaryDate,jdbcType=VARCHAR},
+      </if>
+      <if test="diaryName != null">
+        diary_name = #{diaryName,jdbcType=VARCHAR},
+      </if>
+      <if test="diaryText != null">
+        diary_text = #{diaryText,jdbcType=VARCHAR},
+      </if>
+      <if test="diaryFile != null">
+        diary_file = #{diaryFile,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.shy.model.PersonalDiary">
+    update personal_diary
+    set diary_mood = #{diaryMood,jdbcType=VARCHAR},
+      diary_date = #{diaryDate,jdbcType=VARCHAR},
+      diary_name = #{diaryName,jdbcType=VARCHAR},
+      diary_text = #{diaryText,jdbcType=VARCHAR},
+      diary_file = #{diaryFile,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+</mapper>

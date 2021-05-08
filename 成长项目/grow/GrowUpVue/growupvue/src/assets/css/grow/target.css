@@ -1,0 +1,53 @@
+#c2{
+	color: orange;
+	font: bold 20px 宋体;
+	height: 50px;
+	width: 200px;
+}
+#c3,#c5,#c7,#c9,#c11,#c13,#c15{
+	margin-left: 50px;
+}
+#c4,#c6,#c8,#c10,#c12,#c14,#c16{
+	color: cornflowerblue;
+	font: bold 20px 楷体;
+	height: 45px;
+	width: 200px;
+}
+
+#btn1,#btn2,#btn3{
+	color: crimson;
+	height: 50px;
+	font: bold 20px 楷体;
+}
+
+#btn4,#btn5{
+	margin-left: 50px;
+	background-color: greenyellow;
+	color: blue;
+	font: bold 20px 楷体;
+	height: 50px;
+	width: 100px;
+}
+
+#btn6{
+	margin-left: 30px;
+	background-color: crimson;
+	color: #F0F8FF;
+	font: bold 20px 楷体;
+	height: 50px;
+	width: 200px;
+}
+
+#btn7{
+	margin-left: 50px;
+	background-color: sienna;
+	color: #F0F8FF;
+	font: bold 20px 楷体;
+	height: 50px;
+	width: 100px;
+}
+
+#table3{
+	color: darkcyan;
+	font: bold 25px 宋体;
+}

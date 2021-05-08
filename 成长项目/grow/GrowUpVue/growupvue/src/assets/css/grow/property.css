@@ -1,0 +1,62 @@
+#d2{
+	color: orange;
+	font: bold 20px 宋体;
+	height: 50px;
+}
+#d3,#d5,#d7,#d9,#d11,#d13,#d15,#d17{
+	margin-left: 50px;
+}
+#d4,#d6,#d12,#d14,#d16,#d18{
+	color: springgreen;
+	font: bold 20px 楷体;
+	height: 45px;
+	width: 200px;
+}
+#d8,#d10{
+	color: #8B4513;
+	font: bold 20px 楷体;
+	height: 45px;
+	width: 200px;
+}
+
+#bt1,#bt2,#bt3{
+	color: brown;
+	height: 50px;
+	font: bold 20px 楷体;
+}
+
+#bt4,#bt5{
+	margin-left: 50px;
+	background-color:violet;
+	color: blue;
+	font: bold 20px 楷体;
+	height: 50px;
+	width: 100px;
+}
+
+#bt6{
+	margin-left: 30px;
+	background-color: crimson;
+	color: #F0F8FF;
+	font: bold 20px 楷体;
+	height: 50px;
+	width: 200px;
+}
+
+#bt7{
+	margin-left: 50px;
+	background-color: wheat;
+	color: green;
+	font: bold 20px 楷体;
+	height: 50px;
+	width: 100px;
+}
+
+#table4{
+	color: steelblue;
+	font: bold 25px 宋体;
+}
+
+#d8{
+	float: left;
+}

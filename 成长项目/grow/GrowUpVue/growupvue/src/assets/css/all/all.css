@@ -1,0 +1,69 @@
+#body2{
+	background-image: url(../../img/12.jpg);
+	background-size: 100%;
+	height: 900px;
+}
+#head{
+	margin-top: 50px;
+	color: blue;
+	font: bold 50px 黑体;
+	margin-left: 500px;
+}
+#table{
+	color: blue;
+	font: bold 25px 楷体;
+}
+
+#submit1,#write{
+	margin-left: 200px;
+}
+#submit1{
+	font: bold 25px 微软雅黑;
+	height: 60px;
+}
+#write{
+	font: bold 25px 微软雅黑;
+	height: 60px;
+}
+#home{
+	color: saddlebrown;
+	font: bold 40px 黑体;
+	margin-top: 50px;
+}
+
+#text{
+	color: aquamarine;
+	font: bold 30px 黑体;
+}
+
+#name1{
+	color: aquamarine;
+	font: bold 30px 黑体;
+}
+
+#add{
+	background-color: #8B4513;
+	color: #F0F8FF;
+	font: bold 20px 宋体;
+	height: 50px;
+	width: 100px;
+}
+
+#reset1{
+	margin-left: 100px;
+	background-color: #8B4513;
+	color: #F0F8FF;
+	font: bold 20px 宋体;
+	height: 50px;
+	width: 100px;
+}
+
+#form{
+	margin-left: 50px;
+}
+#drawer{
+	font: bold 30px 宋体;
+}
+#button1{
+	margin-left: 50px;
+}

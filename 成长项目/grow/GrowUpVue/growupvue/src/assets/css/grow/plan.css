@@ -1,0 +1,98 @@
+#user5 {
+	color: slateblue;
+	font: bold 20px 宋体;
+	height: 50px;
+	width: 200px;
+}
+
+#submit10,
+#submit11,
+#submit12 {
+	height: 50px;
+	font: bold 20px 楷体;
+}
+
+#table2 {
+	color: red;
+	font: bold 25px 宋体;
+}
+
+#a1,
+#a3,
+#a5,
+#a7,
+#a9,
+#a11 {
+	margin-left: 50px;
+}
+
+#a2,
+#a4,
+#a6,
+#a8,
+#a10,
+#a12 {
+	color: indigo;
+	font: bold 20px 楷体;
+	height: 45px;
+	width: 200px;
+}
+
+#submit13 {
+	background-color: rosybrown;
+	color: #F0F8FF;
+	font: bold 20px 楷体;
+	height: 50px;
+	width: 100px;
+}
+
+#submit14 {
+	margin-left: 100px;
+	background-color: rosybrown;
+	color: #F0F8FF;
+	font: bold 20px 楷体;
+	height: 50px;
+	width: 100px;
+}
+
+#submit15 {
+	background-color: crimson;
+	color: #F0F8FF;
+	font: bold 20px 楷体;
+	height: 50px;
+	width: 200px;
+}
+
+#submit16 {
+	margin-left: 100px;
+	background-color: salmon;
+	color: #F0F8FF;
+	font: bold 20px 楷体;
+	height: 50px;
+	width: 100px;
+}
+
+#a13,
+#a15 {
+	margin-left: 50px;
+}
+
+#a14,
+#a16 {
+	color: indigo;
+	font: bold 20px 楷体;
+	height: 45px;
+	width: 200px;
+}
+
+#f1,#f3,#f5,#f7{
+	float: left;
+}
+
+#f1{
+	margin-left: 50px;
+}
+
+#f5{
+	margin-left: 50px;
+}

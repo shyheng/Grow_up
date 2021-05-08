@@ -1,0 +1,75 @@
+#body {
+	background: url("../../img/login.gif");
+	background-size: 100%;
+	height: 900px;
+}
+
+#head {
+	margin-top: 100px;
+	color: #CD2626;
+	font: bold 50px 宋体;
+	margin-left: 500px;
+}
+
+#username,
+#password {
+	width: 500px;
+	padding-left: 500px;
+	color: aqua;
+}
+
+#name,
+#pwd {
+	font: bold 30px 黑体;
+	padding-left: 200px;
+}
+
+#user {
+	border-radius: 50px 0px 100px 50px;
+}
+
+#pass {
+	border-radius: 100px 50px 50px 0px;
+}
+
+#user,
+#pass {
+	height: 60px;
+	border: solid 10px aqua;
+	font-size: 30px;
+	background-color: #E0FFFF;
+
+}
+
+#a_w{
+	margin-left: 500px
+}
+
+#agr{
+	color: aliceblue;
+	font-size: 30px;
+}
+
+#wj{
+	color: #00FFFF;
+	font-size: 30px;
+	margin-left: 300px;
+}
+.btns{
+	margin-left: 400px;
+}
+
+#login{
+	font: bold 30px 微软雅黑;
+	height: 60px;
+	width: 100px;
+	border-radius:50px 50px 0px 0px;
+}
+
+#reset{
+	font: bold 30px 微软雅黑;
+	height: 60px;
+	width: 100px;
+	border-radius:0px 0px 50px 50px;
+	margin-left: 500px;
+}

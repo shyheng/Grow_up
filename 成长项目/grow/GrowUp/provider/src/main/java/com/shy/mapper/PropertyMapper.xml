@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shy.mapper.PropertyMapper">
+  <resultMap id="BaseResultMap" type="com.shy.model.Property">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="property_date" jdbcType="VARCHAR" property="propertyDate" />
+    <result column="property_type" jdbcType="VARCHAR" property="propertyType" />
+    <result column="Income_expenditure" jdbcType="VARCHAR" property="incomeExpenditure" />
+    <result column="property_money" jdbcType="VARCHAR" property="propertyMoney" />
+    <result column="property_remarks" jdbcType="VARCHAR" property="propertyRemarks" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, property_date, property_type, Income_expenditure, property_money, property_remarks
+  </sql>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select property.id, property_date, property_type, Income_expenditure, property_money, property_remarks
+    from users inner join uproperty
+                          on users.id = uproperty.uid
+               inner join property
+                          on uproperty.pid = property.id
+    where users.username=#{username,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectTime" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select * from property where property_date=#{propertyDate,jdbcType=VARCHAR}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from property
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insert" parameterType="com.shy.model.Property">
+    insert into property (property_date, property_type,
+      Income_expenditure, property_money, property_remarks
+      )
+    values (#{propertyDate,jdbcType=VARCHAR}, #{propertyType,jdbcType=VARCHAR},
+      #{incomeExpenditure,jdbcType=VARCHAR}, #{propertyMoney,jdbcType=VARCHAR}, #{propertyRemarks,jdbcType=VARCHAR}
+      )
+  </insert>
+
+  <insert id="insertSelective" parameterType="com.shy.model.Property">
+    insert into property
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="propertyDate != null">
+        property_date,
+      </if>
+      <if test="propertyType != null">
+        property_type,
+      </if>
+      <if test="incomeExpenditure != null">
+        Income_expenditure,
+      </if>
+      <if test="propertyMoney != null">
+        property_money,
+      </if>
+      <if test="propertyRemarks != null">
+        property_remarks,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="propertyDate != null">
+        #{propertyDate,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyType != null">
+        #{propertyType,jdbcType=VARCHAR},
+      </if>
+      <if test="incomeExpenditure != null">
+        #{incomeExpenditure,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyMoney != null">
+        #{propertyMoney,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyRemarks != null">
+        #{propertyRemarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shy.model.Property">
+    update property
+    <set>
+      <if test="propertyDate != null">
+        property_date = #{propertyDate,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyType != null">
+        property_type = #{propertyType,jdbcType=VARCHAR},
+      </if>
+      <if test="incomeExpenditure != null">
+        Income_expenditure = #{incomeExpenditure,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyMoney != null">
+        property_money = #{propertyMoney,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyRemarks != null">
+        property_remarks = #{propertyRemarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <update id="updateByPrimaryKey" parameterType="com.shy.model.Property">
+    update property
+    set property_date = #{propertyDate,jdbcType=VARCHAR},
+      property_type = #{propertyType,jdbcType=VARCHAR},
+      Income_expenditure = #{incomeExpenditure,jdbcType=VARCHAR},
+      property_money = #{propertyMoney,jdbcType=VARCHAR},
+      property_remarks = #{propertyRemarks,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+</mapper>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shy.mapper.TargetMapper">
+  <resultMap id="BaseResultMap" type="com.shy.model.Target">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="tar_content" jdbcType="VARCHAR" property="tarContent" />
+    <result column="tar_start" jdbcType="VARCHAR" property="tarStart" />
+    <result column="tar_over" jdbcType="VARCHAR" property="tarOver" />
+    <result column="tar_name" jdbcType="VARCHAR" property="tarName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, tar_content, tar_start, tar_over, tar_name
+  </sql>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select target.id, tar_content, tar_start, tar_over, tar_name
+    from users inner join ut
+                          on users.id = ut.uid
+               inner join target
+                          on ut.tid = target.id
+    where users.username=#{username,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectTime" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select * from target where tar_start=#{tarStart,jdbcType=VARCHAR}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from target
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insert" parameterType="com.shy.model.Target">
+    insert into target (tar_content, tar_start,
+      tar_over, tar_name)
+    values (#{tarContent,jdbcType=VARCHAR}, #{tarStart,jdbcType=VARCHAR},
+      #{tarOver,jdbcType=VARCHAR}, #{tarName,jdbcType=VARCHAR})
+  </insert>
+
+  <insert id="insertSelective" parameterType="com.shy.model.Target">
+    insert into target
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="tarContent != null">
+        tar_content,
+      </if>
+      <if test="tarStart != null">
+        tar_start,
+      </if>
+      <if test="tarOver != null">
+        tar_over,
+      </if>
+      <if test="tarName != null">
+        tar_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="tarContent != null">
+        #{tarContent,jdbcType=VARCHAR},
+      </if>
+      <if test="tarStart != null">
+        #{tarStart,jdbcType=VARCHAR},
+      </if>
+      <if test="tarOver != null">
+        #{tarOver,jdbcType=VARCHAR},
+      </if>
+      <if test="tarName != null">
+        #{tarName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shy.model.Target">
+    update target
+    <set>
+      <if test="tarContent != null">
+        tar_content = #{tarContent,jdbcType=VARCHAR},
+      </if>
+      <if test="tarStart != null">
+        tar_start = #{tarStart,jdbcType=VARCHAR},
+      </if>
+      <if test="tarOver != null">
+        tar_over = #{tarOver,jdbcType=VARCHAR},
+      </if>
+      <if test="tarName != null">
+        tar_name = #{tarName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <update id="updateByPrimaryKey" parameterType="com.shy.model.Target">
+    update target
+    set tar_content = #{tarContent,jdbcType=VARCHAR},
+      tar_start = #{tarStart,jdbcType=VARCHAR},
+      tar_over = #{tarOver,jdbcType=VARCHAR},
+      tar_name = #{tarName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+</mapper>
